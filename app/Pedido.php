@@ -19,7 +19,7 @@ class Pedido extends Model
 
     public function usuarios()
     {
-        return $this->hasMany('App\Usuario');
+        return $this->belongsTo('App\Usuario');
     }
 
     public function estados()

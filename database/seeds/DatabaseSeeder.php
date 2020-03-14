@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        // \App\Pregunta::query()->delete();
-	    // \App\Quiz::query()->delete();
+        \App\Plato::query()->delete();
+	    \App\Categoria::query()->delete();
     
         $this->call(Categoria1Seeder::class);
         $this->call(Categoria2Seeder::class);

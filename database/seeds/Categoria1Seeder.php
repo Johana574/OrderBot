@@ -15,15 +15,15 @@ class Categoria1Seeder extends Seeder
 
         $categoria = \App\Categoria::create(['descripcion' => 'Categoria 1']);
 
-	    \App\Plato::create(['plato_id' => $quiz->id,
+	    \App\Plato::create(['plato_id' => $orden->id,
                         	'descripcion' => 'contenido plato 1',
                         	'precio' => '1000']);
 
-        \App\Plato::create(['plato_id' => $quiz->id,
+        \App\Plato::create(['plato_id' => $orden->id,
                         	'descripcion' => 'contenido plato 2',
                         	'precio' => '2000']);
 
-        \App\Plato::create(['plato_id' => $quiz->id,
+        \App\Plato::create(['plato_id' => $orden->id,
                         	'descripcion' => 'contenido plato 3',
                         	'precio' => '3000']);
 

@@ -11,4 +11,10 @@ class Estado extends Model
         'descripcion'
     ];
     
+    public function usuarios()
+    {
+        return $this->hasMany('App\Usuario');
+    }
+
+
 }

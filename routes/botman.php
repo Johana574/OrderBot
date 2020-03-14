@@ -14,8 +14,13 @@ $botman->hears('Hi', function ($bot) {
     $bot->reply('Hello!');
 });
 
+$botman->hears('Hola', function ($bot) {
+    $bot->reply('Cordial saludo, bienvenido al restaurante petacazo, desea ver las categorias a su disposicion?');
+});
+
+
 $botman->hears('listar categorias|listar', function ($bot) {
-	$categorias = \App\Categoria::orderby('descripcion', 'asc')->get();
+	$categorias = \App\Categoria::orderby('id', 'asc')->get();
 
 	foreach($categorias as $categoria)
 	{
@@ -26,6 +31,25 @@ $botman->hears('listar categorias|listar', function ($bot) {
     		$bot->reply("Ups, no hay categorias para mostrar.");
 });
 
+
+
+$botman->hears('cat {id}', function ($bot , $id) {
+	
+	$platos = \App\Plato::orderby('id', 'asc')->get();
+
+	foreach($platos as $plato)
+	{
+			if ($plato->Categoria->id == $id) {
+
+				$bot->reply($plato->id."- ".$plato->descripcion);
+			
+			}
+
+	}
+
+	if(count($platos) == 0)
+    		$bot->reply("Ups, no hay categorias para mostrar.");
+});
 
 
 $botman->fallback(function ($bot) {

@@ -9,14 +9,17 @@ class Plato extends Model
     //
 
     protected $fillable = [
-        'descripcion', 'precio'
+        'categoria_id', 'descripcion', 'precio', 'id'
     ];
 
     public function categoria()
     {
-        return $this->belongsTo('App\Quiz');
+        return $this->belongsTo('App\Categoria');
     }
     
-
+    public function pedidos()
+    {
+        return $this->hasMany('App\Pedido');
+    }
 
 }
