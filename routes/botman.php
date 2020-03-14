@@ -33,7 +33,7 @@ $botman->hears('listar categorias|listar', function ($bot) {
 
 
 
-$botman->hears('cat {id}', function ($bot , $id) {
+$botman->hears('categoria {id}', function ($bot , $id) {
 	
 	$platos = \App\Plato::orderby('id', 'asc')->get();
 
