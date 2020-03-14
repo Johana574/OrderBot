@@ -33,7 +33,7 @@ $botman->hears('listar categorias|listar', function ($bot) {
 
 
 
-$botman->hears('categoria {id}', function ($bot , $id) {
+$botman->hears('cat {id}', function ($bot , $id) {
 	
 	$platos = \App\Plato::orderby('id', 'asc')->get();
 
@@ -50,6 +50,17 @@ $botman->hears('categoria {id}', function ($bot , $id) {
 	if(count($platos) == 0)
     		$bot->reply("Ups, no hay categorias para mostrar.");
 });
+
+
+$botman->hears('plato {id}', function ($bot, $id) {
+	$bot->startConversation(
+
+new \App\Conversations\PedidoConversacion($id));
+
+})->stopsConversation();
+
+
+
 
 
 $botman->fallback(function ($bot) {
