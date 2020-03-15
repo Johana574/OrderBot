@@ -78,7 +78,7 @@ class PedidoConversacion extends Conversation
                 break;
     
                     case "2":
-                        $this->say("PEDISTE 2 PLATOS");
+                        $this->say("PEDISTE 2 PLATOS de ");
                         $cantidad = 2;
                 break;
     
@@ -90,7 +90,7 @@ class PedidoConversacion extends Conversation
                 
         });   	 
 
-
+   
 
 
 

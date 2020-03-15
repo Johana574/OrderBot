@@ -24,8 +24,12 @@ $botman->hears('listar categorias|listar', function ($bot) {
 
 	foreach($categorias as $categoria)
 	{
-    		$bot->reply($categoria->id."- ".$categoria->descripcion);
+			$bot->reply($categoria->id."- ".$categoria->descripcion);
+			
 	}
+	
+	$bot->reply("Si deseas ver la Categoria escribe Cat #");
+
 
 	if(count($categorias) == 0)
     		$bot->reply("Ups, no hay categorias para mostrar.");
@@ -42,6 +46,8 @@ $botman->hears('cat {id}', function ($bot , $id) {
 			if ($plato->Categoria->id == $id) {
 
 				$bot->reply($plato->id."- ".$plato->descripcion);
+
+				
 			
 			}
 
@@ -59,6 +65,16 @@ new \App\Conversations\PedidoConversacion($id));
 
 })->stopsConversation();
 
+
+
+
+
+
+$botman->hears('acerca de|acerca', function ($bot) {
+	$msj = "Este bot fue desarrollado por Johana Saldarriaga y Carlos Marquez, en la clase de maestria de Metodos agiles.";
+
+	$bot->reply($msj);
+});
 
 
 
