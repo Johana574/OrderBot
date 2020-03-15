@@ -20,8 +20,8 @@ class CreatePedidosTable extends Migration
             $table->unsignedInteger('plato_id');
             $table->unsignedInteger('estado_id');
 
-            $table->integer('cantidad', 30);
-            $table->integer('valor', 30);
+            $table->timestamps ('fecha');
+            $table->integer('valor_total', 30);
 
 
             $table->timestamps();
