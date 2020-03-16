@@ -18,7 +18,6 @@ $botman->hears('Hola', function ($bot) {
     $bot->reply('Cordial saludo, bienvenido al restaurante PetaCazo, desea ver las categorias a su disposicion?');
 });
 
-
 $botman->hears('listar categorias|listar', function ($bot) {
 	$categorias = \App\Categoria::orderby('id', 'asc')->get();
 
@@ -33,8 +32,6 @@ $botman->hears('listar categorias|listar', function ($bot) {
 	if(count($categorias) == 0)
     		$bot->reply("Lo sentimos, no hay categorias para mostrar.");
 });
-
-
 
 $botman->hears('cat {id}', function ($bot , $id) {
 	
@@ -52,15 +49,12 @@ $botman->hears('cat {id}', function ($bot , $id) {
 		$bot->reply("Lo siento, no hay Categorias para mostrar.");
 });
 
-
 $botman->hears('plato {id}', function ($bot, $id) {
 	$bot->startConversation(
 
 new \App\Conversations\PedidoConversacion($id));
 
 })->stopsConversation();
-
-
 
 $botman->hears('acerca de|acerca', function ($bot) {
 	$msj = "Este bot fue desarrollado por Johana Saldarriaga y Carlos Márquez, en la clase de Maestria de Metodos Agiles.";
@@ -83,10 +77,8 @@ $botman->hears('ayuda', function ($bot) {
 	}
 });
 
-
 $botman->fallback(function ($bot) {
 	$bot->reply("No es clara tu solicitud, por favor usa el comando Ayuda para ver las opciones.");
 });
-
 
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
