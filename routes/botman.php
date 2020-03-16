@@ -71,7 +71,7 @@ new \App\Conversations\PedidoConversacion($id));
 
 
 $botman->hears('acerca de|acerca', function ($bot) {
-	$msj = "Este bot fue desarrollado por Johana Saldarriaga y Carlos Marquez, en la clase de maestria de Metodos agiles.";
+	$msj = "Este bot fue desarrollado por Johana Saldarriaga y Carlos Márquez, en la clase de Maestria de Metodos Agiles.";
 
 	$bot->reply($msj);
 });
