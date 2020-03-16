@@ -48,7 +48,7 @@ $botman->hears('cat {id}', function ($bot , $id) {
 			}
 		}
 
-	if(count($plato) == 0) 
+	if(count($platos) == 0) 
 		$bot->reply("Lo siento, no hay Categorias para mostrar.");
 });
 
@@ -82,7 +82,6 @@ $botman->hears('ayuda', function ($bot) {
     		$bot->reply($key . ": " . $value);
 	}
 });
-
 
 
 $botman->fallback(function ($bot) {

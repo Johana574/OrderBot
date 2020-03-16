@@ -83,7 +83,7 @@ class PedidoConversacion extends Conversation
                 break;
     
                     default:
-                        $this->say("NO PIDIO NADA MANITO");
+                        $this->say("NO SE RECIBIO NINGUN PLATO O CATEGORIA");
                         $this->repeat();
                 break;
                 }
