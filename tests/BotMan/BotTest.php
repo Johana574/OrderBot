@@ -13,10 +13,17 @@ class BotTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->bot->receives('Hi')
-            ->assertReply('Hello!');
+        $this->bot->receives('Hola')
+            ->assertReply('Cordial saludo, bienvenido al restaurante PetaCazo, desea ver las categorias a su disposicion?');
     }
 
+    
+    public function testDesconocido()
+    {
+     
+         $this-> bot->receives('Cualquier cosa')
+                    ->assertReply('No es clara tu solicitud, por favor usa el comando Ayuda para ver las opciones.');
+    }
 
     public function testAbout()
     {
@@ -33,15 +40,14 @@ class BotTest extends TestCase
     {
 
         $ayuda = ['Los comandos disponibles son:',
-            '/ayuda: Mostrar este mensaje de ayuda',
-          	'acerca de|acerca: Ver la información quien desarrollo este lindo bot',
-          	'listar quizzes|listar: Listar los cuestionarios disponibles',
-          	'iniciar quiz <id>: Iniciar la solución de un cuestionario',
-          	'ver puntajes|puntajes: Ver los últimos puntajes',
-            'borrar mis datos|borrar: Borrar mis datos del sistema'];
+            'ayuda: Mostrar este mensaje de ayuda',
+          	'acerca de|acerca: Ver la información de quien desarrollo este bot',
+          	'listar categorias|listar: Listar las categorias disponibles de platos',
+          	'cat <id>: Elegir la Categoria con su ID',
+          	'Plato <id>: Elegir el Plato'];
               
         $this->bot
-                    ->receives('/ayuda')
+                    ->receives('ayuda')
                     ->assertReplies($ayuda);
         
     }

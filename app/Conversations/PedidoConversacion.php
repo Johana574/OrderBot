@@ -38,7 +38,7 @@ class PedidoConversacion extends Conversation
 
         if($this->orden === null)
         {
-                $this->say("Lo siento, el plato solicitado no existe.");
+                $this->say("Lo siento, el Plato solicitado no existe.");
                 return false;
         }
 
