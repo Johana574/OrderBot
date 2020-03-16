@@ -76,6 +76,20 @@ $botman->hears('acerca de|acerca', function ($bot) {
 	$bot->reply($msj);
 });
 
+$botman->hears('ayuda', function ($bot) {
+	$ayuda = ['ayuda' => 'Mostrar este mensaje de ayuda',
+          	'acerca de|acerca' => 'Ver la información de quien desarrollo este bot',
+          	'listar categorias|listar' => 'Listar las categorias disponibles de platos',
+          	'cat <id>' => 'Elegir la Categoria con su ID',
+          	'Plato <id>' => 'Elegir el Plato'];
+    
+	$bot->reply("Los comandos disponibles son:");
+
+	foreach($ayuda as $key=>$value)
+	{
+    		$bot->reply($key . ": " . $value);
+	}
+});
 
 
 
