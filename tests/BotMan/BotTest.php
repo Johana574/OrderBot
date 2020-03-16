@@ -53,5 +53,19 @@ class BotTest extends TestCase
     }
 
 
+    public function testNoCategoria()
+    {
+
+        $this-> bot->receives('listar categorias')
+        ->assertReply('1- Perro', '2- Hamburguesa', '3- Pizza');
+//        $this-> bot->receives('listar categorias')
+//        ->assertReply('2- Hamburguesa');
+
+        $this-> bot->receives('listar')
+        ->assertReply('1- Perro', '2- Hamburguesa', '3- Pizza');
+    
+    }
+
+
 
 }
